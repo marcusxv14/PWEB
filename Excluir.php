@@ -1,22 +1,21 @@
 <?php
- 
-$id = 2;
-
 require 'Conexao.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST['id'];
 
-function excluirContato($conexao, $id) {
     $sql = "DELETE FROM contatos WHERE id = :id";
     $stmt = $conexao->prepare($sql);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-
     if ($stmt->execute()) {
-        echo "Registro excluído com sucesso!";
+        $mensagem = "Registro excluído com sucesso!";
     } else {
-        echo "Erro ao excluir registro.";
+        $mensagem = "Erro ao excluir registro.";
     }
-}
 
-excluirContato($conexao, $id);
+    // Redireciona de volta para a página principal com uma mensagem
+    header("Location: index.php?mensagem=" . urlencode($mensagem));
+    exit();
+}
 ?>
