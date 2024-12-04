@@ -13,9 +13,46 @@
     <?php if (isset($_GET['mensagem'])): ?>
         <p><?= htmlspecialchars($_GET['mensagem']) ?></p>
     <?php endif; ?>
-    
-    <form method="post" action="Inserir.php" style="display:inline;">
+
+    <?php
+    $exibirFormulario = isset($_GET['novo_usuario']);
+    if ($exibirFormulario):
+    ?>
+
+    <form method="post" action="Inserir.php">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required> 
+
+        <label for="logradouro">Logradouro</label>
+        <input type="text" name="logradouro" id="logradouro" required> 
+
+        <label for="numero">Numero</label>
+        <input type="number" nome="numero" id="numero" required>
+
+        <label for="bairro">Bairro</label>
+        <input type="text" name="bairro" id="bairro" required>
+
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" id="cidade" required>
+
+        <label for="estado">Estado</label>
+        <input type="text" name="estado" id="estado" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="celular">Celular:</label>
+        <input type="text" name="celular" id="celular" required>
+
+        <label for="status">Status:</label>
+        <input type="text" name="status" id="status" required>
+        <button type="submit">Inserir</button>
     </form>
+    <?php else: ?>
+        <form method="get" action="index.php">
+            <button type="submit" name="novo_usuario" value="1">Novo Contato</button>
+        </form>
+    <?php endif; ?>
     <hr>
     <table>
         <tr>

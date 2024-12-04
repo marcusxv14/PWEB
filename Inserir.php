@@ -1,22 +1,17 @@
-   <?php
-// inserir.php
-
-// Inclui o arquivo de conexão
+<?php
 require 'Conexao.php';
 
-// Dados a serem inseridos
-$nome = "Alexandre";
-$logradouro = "Rua Um";
-$numero = 2;
-$bairro = "Tres";
-$cidade = "Quatro";
-$estado = "Cinco";
-$email = "alexandre@exemplo.com.br";
-$celular = "(99) 99999-9999";
-$status = 1; // 1 para ativo, 0 para inativo
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $logradouro = $_POST['logradouro'];
+    $numero = $_POST['numero'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
+    $email = $_POST['email'];
+    $celular = $_POST['celular'];
+    $status = $_POST['status'];
 
-// Função para inserir dados
-function inserirContato($conexao, $nome, $logradouro, $numero, $bairro, $cidade, $estado, $email, $celular, $status) {
     $sql = "INSERT INTO contatos (nome, logradouro, numero, bairro, cidade, estado, email, celular, status) 
             VALUES (:nome, :logradouro, :numero, :bairro, :cidade, :estado, :email, :celular, :status)";
     $stmt = $conexao->prepare($sql);
@@ -31,9 +26,9 @@ function inserirContato($conexao, $nome, $logradouro, $numero, $bairro, $cidade,
         'celular' => $celular,
         'status' => $status
     ]);
-    echo "Dados inseridos com sucesso!";
-}
 
-// Chama a função para inserir os dados
-inserirContato($conexao, $nome, $logradouro, $numero, $bairro, $cidade, $estado, $email, $celular, $status);
+    $mensagem = "Contato inserido com sucesso!";
+    header("Location: index.php?mensagem=" . urlencode($mensagem));
+    exit();
+}
 ?>
