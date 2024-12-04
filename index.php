@@ -9,11 +9,17 @@
 <body>
     <h1>Agenda de contatos</h1>
     <hr>
-    
-    <?php if (isset($_GET['mensagem'])): ?>
-        <p><?= htmlspecialchars($_GET['mensagem']) ?></p>
-    <?php endif; ?>
 
+    <?php if (isset($_GET['mensagem'])): ?>
+        <div class="popup-overlay active"></div>
+        <div class="popup active">
+            <p><?= htmlspecialchars($_GET['mensagem']) ?></p>
+            <form method="get" action="index.php">
+                <button type="submit">Fechar</button>
+            </form>
+        </div>
+    <?php endif; ?>
+    
     <?php
     $exibirFormulario = isset($_GET['novo_usuario']);
     if ($exibirFormulario):
@@ -49,11 +55,14 @@
         <button type="submit">Inserir</button>
     </form>
     <?php else: ?>
+    
         <form method="get" action="index.php">
-            <button type="submit" name="novo_usuario" value="1">Novo Contato</button>
+            <div class="butao_novo">     
+              <button type="submit" name="novo_usuario" value="1">Novo Contato</button>
+            </div>
         </form>
     <?php endif; ?>
-    <hr>
+
     <table>
         <tr>
             <th>ID</th>
@@ -75,7 +84,9 @@
                 <td>
                     <form method="post" action="Excluir.php" style="display:inline;">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($contato['id']) ?>">
-                        <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este contato?')">Excluir</button>
+                       <div class="botao_excluir">
+                            <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este contato?')">Excluir</button>
+                       </div> 
                     </form>
                 </td>
             </tr>

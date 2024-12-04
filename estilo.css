@@ -3,11 +3,66 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
-th, td {
-    border: 1px solid #ddd;
+td {
+    border: 1px solid #dddddd;
     padding: 8px;
 }
 th {
-    background-color: #f2f2f2;
-    text-align: left;
+    padding: 8px;
+    background-color: #002ab4cb;
+    text-align: center  ;
+    border-radius: 10px;
+}
+.botao_excluir button {
+    
+    background-color: #f44336;
+    color: rgb(0, 0, 0);
+    padding: 4px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 35%;
+    border-radius: 10px;
+}
+.butao_novo button {
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+    padding: 4px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 5%;
+    border-radius: 10px;
+}
+h1 {
+    text-align: center;
+    color: #000000cb;
+}
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.popup.active {
+    display: block;
+}
+.popup-overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.popup-overlay.active {
+    display: block;
 }
