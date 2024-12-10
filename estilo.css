@@ -1,43 +1,91 @@
+/* Estilizaçã/* Estilizaçã/* Estilizaçã/* Estilização do corpo da página */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0; /* Cor de fundo sólida */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+}
 
+/* Estilização da tabela */
 table {
     width: 100%;
     border-collapse: collapse;
-}
-td {
-    border: 1px solid #dddddd;
-    padding: 8px;
-}
-th {
-    padding: 8px;
-    background-color: #002ab4cb;
-    text-align: center  ;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white; 
     border-radius: 10px;
+    overflow: hidden; 
 }
-.botao_excluir button {
-    
-    background-color: #f44336;
-    color: rgb(0, 0, 0);
-    padding: 4px 5px;
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #002ab4;
+    color: white;
+
+}
+
+.titulo {
+    text-align: center;
+    color: #002ab4; /* Cor vibrante */
+    margin-top: 20px;
+    font-size: 2em; /* Tamanho da fonte ajustado */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para o texto do título */
+    letter-spacing: 1px; /* Adiciona espaçamento entre as letras */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo do título */
+    font-family: 'Arial', sans-serif; /* Define a fonte */
+}
+/* Estilização dos botões */
+.botao_excluir button, .butao_novo button {
+    padding: 8px 12px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 35%;
     border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para os botões */
 }
+
+.butao_novo button:hover {
+    background-color: #45a049;
+    transform: scale(1.01); /* Leve aumento no tamanho do botão */
+    border-color: #3e8e41; /* Cor da borda ao passar o mouse */
+}
+
+.botao_excluir button {
+    background-color: #f44336;
+}
+.botao_excluir button:hover {
+    background-color: #df3428;
+    transform: scale(1.01); /* Leve aumento no tamanho do botão */
+    border-color: #df3428; /* Cor da borda ao passar o mouse */
+}
+
 .butao_novo button {
     background-color: #4CAF50;
-    color: rgb(0, 0, 0);
-    padding: 4px 5px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 5%;
-    border-radius: 10px;
 }
+
+/* Estilização do título */
 h1 {
     text-align: center;
-    color: #000000cb;
+    color: #333333;
+    margin-top: 20px;
+    font-size: 2.5em; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para o texto do título */
+    letter-spacing: 1px; /* Adiciona espaçamento entre as letras */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo do título */
 }
+
+/* Estilização do popup */
 .popup {
     display: none;
     position: fixed;
@@ -45,14 +93,19 @@ h1 {
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #333333;
 }
+
 .popup.active {
     display: block;
 }
+
 .popup-overlay {
     display: none;
     position: fixed;
@@ -63,6 +116,116 @@ h1 {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
 }
+
 .popup-overlay.active {
     display: block;
+}
+
+/* Estilização do título do popup */
+.popup h2 {
+    text-align: center;
+    color: #002ab4;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Estilização do conteúdo do popup */
+.popup p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Estilização do botão do popup */
+.popup button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.popup button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.Novo_cadastro {
+    max-width: 90%;
+    min-width:50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Novo_cadastro h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.Novo_cadastro label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+.Novo_cadastro input {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.Novo_cadastro button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.Novo_cadastro button:hover {
+    background-color: #45a049;
+    transform: scale(1.01); /* Leve aumento no tamanho do botão */
+    border-color: #3e8e41; /* Cor da borda ao passar o mouse */
+}
+.Novo_cadastro button[type="button"] {
+    background-color: #f44336; /* Cor de fundo para o botão de cancelar */
+}
+
+.Novo_cadastro button[type="button"]:hover {
+    background-color: #df3428; /* Cor de fundo ao passar o mouse no botão de cancelar */
+}
+.detalhes {
+    display: none;
+    background-color: #f9f9f9; /* Cor de fundo para as linhas de detalhes */
+    text-align: center;
+}
+
+.mostrar-mais {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
 }
