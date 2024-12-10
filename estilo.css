@@ -68,6 +68,25 @@ th {
     transform: scale(1.01); /* Leve aumento no tamanho do botão */
     border-color: #df3428; /* Cor da borda ao passar o mouse */
 }
+.botao_editar button, .butao_novo button {
+    padding: 8px 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para os botões */
+}
+.botao_editar button {
+    background-color: #2ac204;
+}
+.botao_editar button:hover {
+    background-color: #26aa05;
+    transform: scale(1.01); /* Leve aumento no tamanho do botão */
+    border-color: #2ac204; /* Cor da borda ao passar o mouse */
+}
+
 
 .butao_novo button {
     background-color: #4CAF50;
@@ -228,4 +247,9 @@ h1 {
     cursor: pointer;
     color: blue;
     text-decoration: underline;
+}
+.botoes-container {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: center; /* Centraliza os botões */
 }

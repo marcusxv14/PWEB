@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $celular = $_POST['celular'];
     $status = $_POST['status'];
 
+
     $sql = "INSERT INTO contatos (nome, logradouro, numero, bairro, cidade, estado, email, celular, status) 
             VALUES (:nome, :logradouro, :numero, :bairro, :cidade, :estado, :email, :celular, :status)";
     $stmt = $conexao->prepare($sql);

@@ -36,7 +36,7 @@
         <input type="text" name="logradouro" id="logradouro" required> 
 
         <label for="numero">Numero:</label>
-        <input type="number" nome="numero" id="numero" required>
+        <input type="number" name="numero" id="numero" required>
 
         <label for="bairro">Bairro:</label>
         <input type="text" name="bairro" id="bairro" required>
@@ -87,16 +87,20 @@
                 <td><?= htmlspecialchars($contato['celular']) ?></td>
                 <td><?= htmlspecialchars($contato['email']) ?></td>
                 <td>
-                <form method="post" action="Excluir.php" style="display:inline;">
-                        <input type="hidden" name="id" value="<?= htmlspecialchars($contato['id']) ?>">
-                        <div class="botao_excluir">
-                            <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este contato?')">Excluir</button>
-                        </div>
+                <div class="botoes-container">
+                        <form method="post" action="Excluir.php" style="display:inline;">
+                            <input type="hidden" name="id" value="<?= htmlspecialchars($contato['id']) ?>">
+                            <div class="botao_excluir">
+                                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este contato?')">Excluir</button>
+                            </div>
                         </form>
-                    <form method="get" action="editar.php" style="display:inline;">
-                        <input type="hidden" name="editar" value="<?= htmlspecialchars($contato['id']) ?>">
-                        <button type="submit">Editar</button>
-                    </form>
+                        <form method="get" action="editar.php" style="display:inline;">
+                            <input type="hidden" name="editar" value="<?= htmlspecialchars($contato['id']) ?>">
+                            <div class="botao_editar">
+                                <button type="submit">Editar</button>
+                            </div>
+                        </form>
+                    </div>
                     <span class="mostrar-mais" onclick="document.getElementById('detalhes-<?= htmlspecialchars($contato['id']) ?>').style.display = 'table-row';">Mostrar Mais</span>
                 </td>
             </tr>
