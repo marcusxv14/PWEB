@@ -7,7 +7,7 @@
     <title>Agenda de contatos</title>
 </head>
 <body>
-    <div class="titulo">
+    <div class="cabecalho">
     <h1>Agenda de contatos</h1>
     </div>
     <hr>
